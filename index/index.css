@@ -1,0 +1,365 @@
+/* Genel Sıfırlama ve Font Ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fcfcfc;
+    color: #333;
+}
+
+/* NAVBAR STYLES */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+    text-transform: lowercase;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    margin: 0 15px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .login-btn:hover {
+    color: #000;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.subscribe-nav-btn {
+    background-color: #606c38b6;
+    color: #fff !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 2px;
+}
+
+.cart-icon {
+    position: relative;
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #3d2626ee;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* HERO SECTION */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&q=80&w=1500'); /* Geçici arka plan resmi */
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+}
+
+.hero-overlay {
+    background: linear-gradient(to bottom, rgba(95, 175, 30, 0.507), rgba(35, 95, 7, 0.76));
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-logo-box {
+    border: 2px solid #fff;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.hero-logo-box i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.hero-content h1 {
+    font-size: 38px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 35px;
+    font-weight: bold;
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #333;
+}
+
+/* FEATURES SECTION */
+.features {
+    padding: 60px 10%;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* Başlığı mavi tonundan, logonuzla uyumlu şık antrasit tonuna çektik */
+.section-title {
+    font-size: 28px;
+    color: #2b2d42;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.feature-card {
+    flex: 1;
+    padding: 20px;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #b6d4aac4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    font-size: 28px;
+    color: #b6d4aac4;
+}
+
+.feature-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #2b2d42;
+    letter-spacing: 0.5px;
+}
+
+.feature-card p {
+    font-size: 13.5px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* MONTH'S BOX SECTION */
+.months-box {
+    padding: 60px 10%;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.box-title {
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #2b2d42;
+    margin-bottom: 40px;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+
+.book-card {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.book-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+}
+
+.book-img-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #f0f2eb; /* Kitap arkalarını da soft yeşil-gri tonuna uydurduk */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a3b19b;
+    margin-bottom: 15px;
+}
+
+.book-card h3 {
+    font-size: 16px;
+    color: #2b2d42;
+    margin-bottom: 5px;
+}
+
+/* Kitap yazar isimlerinin mavisini soft yeşile çektik */
+.book-card p {
+    font-size: 14px;
+    color: #606c38;
+    font-style: italic;
+}
+
+.action-wrapper {
+    margin-top: 30px;
+}
+
+/* Beğendiğiniz subscribe buton rengini buradaki büyük butona da uyguladık */
+.big-green-btn {
+    display: inline-block;
+    background-color: #606c38b6;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 40px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
+.big-green-btn:hover {
+    background-color: #4f582f; /* Üzerine gelince bir tık koyulaşma efekti */
+}
+
+/* CALL TO ACTION BLUE SECTION -> NOW DEEP GREEN (Koyu Yeşil Alan) */
+/* İstediğiniz gibi burayı tamamen derin, şık bir koyu orman yeşiline çevirdik */
+.cta-blue {
+    background-color: #283618; 
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta-blue h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.cta-blue p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* Koyu yeşil üzerindeki butonun yazısını da uyumlu yaptık */
+.cta-white-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #283618;
+    text-decoration: none;
+    padding: 12px 35px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: opacity 0.3s;
+}
+
+.cta-white-btn:hover {
+    opacity: 0.9;
+}
+
+/* FOOTER SECTION (En alttaki koyu alan) */
+/* İletişim ve telif haklarının olduğu bu en alt paneli de cta ile uyumlu çok koyu antrasit-yeşil tonuna çektik */
+.main-footer {
+    background-color: #192211; 
+    color: #a3b19b;
+    padding: 40px 5%;
+    font-size: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #a3b19b;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-socials i {
+    font-size: 16px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer-socials i:hover {
+    color: #fff;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .features-grid, .books-grid {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
