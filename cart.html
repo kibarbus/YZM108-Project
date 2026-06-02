@@ -3,9 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Your Cart - Unboxed Pages</title>
+    <!-- Düzenlenen Kısım: index klasörünün içindeki CSS'e ulaşıyoruz -->
+    <link rel="stylesheet" href="index/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-box-archive" style="color: #111111;"></i>
+            <span style="color: #111111; font-weight: 700; margin-left: 5px;">UnBoxed Pages</span>    
+        </div>
+        <nav class="nav-links">
+            <!-- Düzenlenen Kısım: boxes klasörünün içine giriyor -->
+            <a href="boxes/boxes.html">BOXES</a>
+            <a href="index/index.html#months-box">MONTH'S SELECTION</a>
+            <a href="index/index.html">OUR STORY</a>
+            <a href="index/index.html">FAQ</a>
+            <a href="index/index.html">CONTACT</a>
+            <a href="index/index.html" class="login-btn">LOGIN</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="index/index.html" class="subscribe-nav-btn">SUBSCRIBE</a>
+            <!-- Zaten bu sayfadayız -->
+            <a href="./cart.html" class="cart-icon">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="cart-badge">1</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- CART CONTAINER -->
+    <main class="cart-container">
+        <h1 class="cart-main-title">YOUR SHOPPING CART</h1>
+        
+        <div class="cart-wrapper">
+            <!-- SEPETTEKİ ÜRÜNLER -->
+            <div class="cart-items">
+                <div class="cart-item-card">
+                    <div class="cart-item-img">
+                        <i class="fa-solid fa-box-open" style="font-size: 30px; color: #a3b19b;"></i>
+                    </div>
+                    <div class="cart-item-details">
+                        <h3>JUNE 2026 BOX: "THE UNPASSING"</h3>
+                        <p>Monthly Book Subscription</p>
+                        <span class="cart-item-remove"><i class="fa-regular fa-trash-can"></i> Remove</span>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <button class="qty-btn">-</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <div class="cart-item-price">
+                        499.00 TL
+                    </div>
+                </div>
+            </div>
+
+            <!-- SİPARİŞ ÖZETİ -->
+            <div class="cart-summary">
+                <h2>ORDER SUMMARY</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>499.00 TL</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span style="color: #606c38; font-weight: 600;">FREE</span>
+                </div>
+                <hr class="summary-divider">
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span>499.00 TL</span>
+                </div>
+                
+                <a href="#" class="checkout-btn">PROCEED TO CHECKOUT</a>
+                <a href="boxes/boxes.html" class="continue-shopping"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Unboxed Pages Book Community. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a> / <a href="#">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
