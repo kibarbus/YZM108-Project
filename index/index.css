@@ -147,7 +147,7 @@ body {
     background-color: #fff;
 }
 
-/* Başlığı mavi tonundan, logonuzla uyumlu şık antrasit tonuna çektik */
+/* Başlığı mavi tonundan, logomuzla uyumlu şık antrasit tonuna çektik */
 .section-title {
     font-size: 28px;
     color: #2b2d42;
@@ -253,7 +253,7 @@ body {
     margin-top: 30px;
 }
 
-/* Beğendiğiniz subscribe buton rengini buradaki büyük butona da uyguladık */
+/* subscribe buton rengini buradaki büyük butona da uyguladık */
 .big-green-btn {
     display: inline-block;
     background-color: #606c38b6;
@@ -271,7 +271,6 @@ body {
 }
 
 /* CALL TO ACTION BLUE SECTION -> NOW DEEP GREEN (Koyu Yeşil Alan) */
-/* İstediğiniz gibi burayı tamamen derin, şık bir koyu orman yeşiline çevirdik */
 .cta-blue {
     background-color: #283618; 
     color: #fff;
@@ -374,7 +373,7 @@ body {
 
 .selection-main-title {
     font-size: 32px;
-    color: #283618; /* Şık koyu yeşiliniz */
+    color: #283618; 
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
@@ -410,7 +409,7 @@ body {
 
 .selection-icon-box {
     font-size: 40px;
-    color: #606c38b6; /* Soft yeşil tonunuz */
+    color: #606c38b6; 
     margin-bottom: 20px;
 }
 
@@ -453,9 +452,9 @@ body {
     }
 }
 
-/* ==========================================================================
-   CART PAGE STYLES (SEPET SAYFASI STİLLERİ)
-   ========================================================================== */
+/* 
+   CART PAGE STYLES (SEPET SAYFASI STİLLERİ) 
+*/
 .cart-container {
     padding: 60px 10%;
     min-height: 75vh;
@@ -597,7 +596,7 @@ body {
 /* Ödeme ve Alışverişe Devam Et Butonları */
 .checkout-btn {
     display: block;
-    background-color: #606c38b6; /* İstediğiniz o soft açık yeşil tonu */
+    background-color: #606c38b6; 
     color: #fff;
     text-align: center;
     text-decoration: none;
