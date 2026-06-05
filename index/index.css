@@ -11,12 +11,14 @@ body {
     color: #333;
 }
 
-/* NAVBAR STYLES */
+/* ==========================================
+   2. NAVBAR & LOGO STYLES (Genişletilmiş Premium Navbar)
+   ========================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 35px 8%; /* Navbar dikey genişliği artırıldı, sağdan soldan daha geniş alan bırakıldı */
     background-color: #fff;
     border-bottom: 1px solid #eaeaea;
     position: sticky;
@@ -25,46 +27,83 @@ body {
 }
 
 .logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #222;
-    text-transform: lowercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 26px; /* Logo yazısı bir tık büyütüldü */
+    font-weight: 700;
+    color: #111111;
+    cursor: pointer;
+    user-select: none;
+    text-transform: none; /* Büyük-küçük harf dayatmasını tamamen kaldırır */
+}
+
+.logo i {
+    color: #606c38b6; /* Şık soft zeytin yeşili kutu */
+    font-size: 30px; /* İkon logoyla dengelendi */
+    display: inline-block;
+}
+
+.logo span {
+    color: #111111;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+/* Menü Başlıkları (Tamamen sağa yaslandı ve fontları büyütüldü) */
+.nav-links {
+    margin-left: auto; /* Başlıkları tamamen sağa fırlatır */
+    margin-right: 40px; /* Sağdaki butonlarla arasında geniş bir nefes alma alanı bırakır */
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #555;
-    margin: 0 15px;
-    font-size: 13px;
-    font-weight: 600;
-    transition: color 0.3s;
+    color: #444;
+    margin: 0 22px; /* Başlıkların kendi aralarındaki boşluk artırıldı */
+    font-size: 17px; /* Başlıkların boyutu büyütüldü */
+    font-weight: 700; /* Daha tok ve belirgin durmaları için bold yapıldı */
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
 }
 
-.nav-links a:hover, .login-btn:hover {
-    color: #000;
+.nav-links a:hover {
+    color: #606c38b6 !important; /* Mouse gelince o soft yeşile döner */
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px; /* Buton ve sepet arasındaki mesafe açıldı */
 }
 
 .subscribe-nav-btn {
     background-color: #606c38b6;
     color: #fff !important;
-    padding: 10px 20px;
+    padding: 14px 28px; /* Buton biraz daha büyütülüp navbar genişliğine uyduruldu */
     text-decoration: none;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
     border-radius: 2px;
+    transition: background-color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.subscribe-nav-btn:hover {
+    background-color: #4f582f;
 }
 
 .cart-icon {
     position: relative;
     color: #333;
-    font-size: 18px;
+    font-size: 22px; /* Sepet ikonu bir tık büyütüldü */
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cart-icon:hover {
+    color: #606c38b6;
 }
 
 .cart-badge {
@@ -73,8 +112,8 @@ body {
     right: -10px;
     background-color: #3d2626ee;
     color: #fff;
-    font-size: 10px;
-    padding: 2px 5px;
+    font-size: 11px;
+    padding: 2px 6px;
     border-radius: 50%;
 }
 

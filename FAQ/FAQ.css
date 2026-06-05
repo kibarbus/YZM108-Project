@@ -1,0 +1,89 @@
+/* ==========================================
+   FAQ PAGE STYLES (faq.css)
+   ========================================== */
+.faq-container {
+    padding: 80px 15%;
+    min-height: 75vh;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.faq-container h1 {
+    color: #283618;
+    font-size: 36px;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.faq-wrapper {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Soru Başlık Alanı */
+.faq-question {
+    padding: 22px 30px;
+    font-weight: 600;
+    color: #2b2d42;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f0f2eb; /* Mouse gelince soft yeşil tonlama */
+}
+
+/* Cevap Alanı (Başlangıçta gizli) */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 0 30px;
+}
+
+/* JS ile Aktif Edildiğinde Açılacak Durum */
+.faq-item.active .faq-answer {
+    padding: 25px 30px;
+    max-height: 200px; /* Cevabın sığacağı kadar alan */
+    border-top: 1px solid #eaeaea;
+    background-color: #fcfcfc;
+}
+
+/* Aktifken Ok İkonunu Ters Çevirme */
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+    color: #606c38b6;
+}
+
+.faq-question i {
+    transition: transform 0.3s;
+    color: #888;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 40px 5%;
+    }
+    .faq-container h1 {
+        font-size: 28px;
+    }
+}

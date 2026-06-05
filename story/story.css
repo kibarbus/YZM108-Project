@@ -1,0 +1,59 @@
+/* ==========================================
+   OUR STORY PAGE STYLES (story.css)
+   ========================================== */
+.story-container {
+    padding: 80px 15%;
+    min-height: 75vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-container h1 {
+    color: #283618;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Başlığın altındaki o şık yeşil ince çizgi */
+.story-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #606c38b6;
+    margin: 0 auto 40px auto;
+}
+
+.story-content {
+    text-align: justify; /* Yazıları iki yana yaslar, kitap sayfası gibi durur */
+    font-size: 16px;
+    color: #444;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Sayfa ortasındaki büyük tırnak içindeki soft yeşil vurgu alanı */
+.story-highlight {
+    background-color: #f0f2eb;
+    padding: 30px;
+    border-left: 4px solid #606c38b6;
+    font-style: italic;
+    color: #283618;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 2px;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+/* Mobil Ekranlar İçin Alanı Daraltma */
+@media (max-width: 768px) {
+    .story-container {
+        padding: 40px 5%;
+    }
+    .story-container h1 {
+        font-size: 28px;
+    }
+}

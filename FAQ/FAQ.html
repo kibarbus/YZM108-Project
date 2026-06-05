@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - UnBoxed Pages</title>
+    <link rel="stylesheet" href="../index/index.css">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo" onclick="window.location.href='../index/index.html'">
+            <i class="fa-solid fa-box-archive"></i>
+            <span>UnBoxed Pages</span>    
+        </div>
+        <nav class="nav-links">
+            <a href="../story/story.html">OUR STORY</a>
+            <a href="../boxes/boxes.html">BOXES</a>
+            <a href="../FAQ/FAQ.html">FAQ</a>
+            <a href="../signin/signin.html" class="login-btn">LOGIN</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="../signin/subscribe.html" class="subscribe-nav-btn">SUBSCRIBE</a>
+            <a href="../cart.html" class="cart-icon">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="cart-badge">1</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        
+        <div class="faq-wrapper">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How does the subscription system work?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>UnBoxed Pages works on a monthly subscription basis. When you subscribe, our club carefully selects and packages themed books along with exclusive university-themed surprises, delivering them straight to your door at Kocaeli University every month.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I choose or suggest books for the upcoming months?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, absolutely! At the end of each month during our live book analysis sessions, active members can drop suggestions for future themes and specific book titles. We love keeping our community involved in the curation process.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>When are the live book discussions held?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Live digital discussion and analysis sessions are held during the final week of every month. The access links and exact schedules are shared directly with subscribers via email.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 UnBoxed Pages Book Community. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="../story/story.html">Our Story</a> / 
+                <a href="faq.html">FAQ</a> / 
+                <a href="../subscribe/subscribe.html">Subscribe</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
