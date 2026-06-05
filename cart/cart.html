@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart - Unboxed Pages</title>
-    <link rel="stylesheet" href="index/index.css">
+    <link rel="stylesheet" href="../index/index.css">
+    <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- NAVBAR -->
     <header class="navbar">
-        <div class="logo">
+        <div class="logo" onclick="window.location.href='../index/index.html'" style="cursor: pointer;">
             <i class="fa-solid fa-box-archive" style="color: #111111;"></i>
             <span style="color: #111111; font-weight: 700; margin-left: 5px;">UnBoxed Pages</span>    
         </div>
@@ -23,7 +24,7 @@
         </nav>
         <div class="nav-actions">
             <a href="../signin/subscribe.html" class="subscribe-nav-btn">SUBSCRIBE</a>
-            <a href="../cart/cart.html" class="cart-icon">
+            <a href="./cart.html" class="cart-icon">
                 <i class="fa-solid fa-shopping-cart"></i>
                 <span class="cart-badge">1</span>
             </a>
@@ -75,7 +76,7 @@
                 </div>
                 
                 <a href="#" class="checkout-btn">PROCEED TO CHECKOUT</a>
-                <a href="boxes/boxes.html" class="continue-shopping"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
+                <a href="../boxes/boxes.html" class="continue-shopping"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
             </div>
         </div>
     </main>
