@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Boxes - Unboxed Pages</title>
-    <link rel="stylesheet" href="../index/index.css"> <!-- Ortak Navbar/Footer İçin -->
-    <link rel="stylesheet" href="pastBoxes.css">      <!-- Kendi Özel Stilleri İçin (YENİ EKLENDİ) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../index/index.css"> <link rel="stylesheet" href="pastBoxes.css">      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -25,7 +23,7 @@
             <a href="../signin/subscribe.html" class="subscribe-nav-btn">SUBSCRIBE</a>
             <a href="../cart/cart.html" class="cart-icon">
                 <i class="fa-solid fa-shopping-cart"></i>
-                <span class="cart-badge">1</span>
+                <span class="cart-badge" id="cart-badge">1</span>
             </a>
         </div>
     </header>
@@ -35,34 +33,31 @@
         <p style="margin-bottom: 50px; color: #666; font-size: 15px;">Take a look back at our sold-out, legendary favorite collections from previous months.</p>
         
         <div class="books-grid">
-            <!-- 1. KART: MAYIS KUTUSU -->
             <div class="book-card">
                 <div class="book-img-placeholder">
                     <img src="../images/may-box.jpg" alt="May 2026 Box" class="product-img">
                 </div>
                 <h3>MAY 2026 BOX</h3>
                 <div class="product-price">$19.99</div>
-                <a href="#" class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
+                <a href="#" class="add-to-cart-btn" onclick="addToCart(event)"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
             </div>
 
-            <!-- 2. KART: NİSAN KUTUSU -->
             <div class="book-card">
                 <div class="book-img-placeholder">
                     <img src="../images/april-box.jpg" alt="April 2026 Box" class="product-img">
                 </div>
                 <h3>APRIL 2026 BOX</h3>
                 <div class="product-price">$19.99</div>
-                <a href="#" class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
+                <a href="#" class="add-to-cart-btn" onclick="addToCart(event)"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
             </div>
 
-            <!-- 3. KART: MART KUTUSU -->
             <div class="book-card">
                 <div class="book-img-placeholder">
                     <img src="../images/march-box.jpg" alt="March 2026 Box" class="product-img">
                 </div>
                 <h3>MARCH 2026 BOX</h3>
                 <div class="product-price">$19.99</div>
-                <a href="#" class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
+                <a href="#" class="add-to-cart-btn" onclick="addToCart(event)"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
             </div>
         </div>
     </main>
@@ -76,5 +71,34 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", updateCartBadge);
+
+        // Varolan sepet sayısını günceller
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-badge');
+            if (badge) {
+                let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
+                badge.innerText = cart.length;
+            }
+        }
+
+        function addToCart(event) {
+            event.preventDefault();
+            const card = event.target.closest('.book-card');
+            if (!card) return;
+
+            const boxTitle = card.querySelector('h3').innerText;
+            const boxPrice = card.querySelector('.product-price').innerText;
+            const boxImg = card.querySelector('.product-img').getAttribute('src');
+
+            let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
+            cart.push({ title: boxTitle, price: boxPrice, image: boxImg, isIcon: false });
+            localStorage.setItem('unboxed_cart', JSON.stringify(cart));
+
+            updateCartBadge();
+            alert(`${boxTitle} has been successfully added to your cart!`);
+        }
+    </script>
 </body>
 </html>

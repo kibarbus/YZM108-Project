@@ -25,7 +25,7 @@
             <a href="../signin/subscribe.html" class="subscribe-nav-btn">SUBSCRIBE</a>
             <a href="../cart/cart.html" class="cart-icon">
                 <i class="fa-solid fa-shopping-cart"></i>
-                <span class="cart-badge">1</span>
+                <span class="cart-badge" id="cart-badge">1</span>
             </a>
         </div>
     </header>
@@ -107,7 +107,7 @@
     <section class="cta-blue">
         <h2>READY TO UNBOX YOUR NEXT JOURNEY?</h2>
         <p>Join the UnBoxed Pages community today and elevate your reading experience.</p>
-        <a href="subscribe/subscribe.html" class="cta-white-btn">GET STARTED</a>
+        <a href="../signin/subscribe.html" class="cta-white-btn">GET STARTED</a>
     </section>
 
     <!-- MAIN FOOTER  -->
@@ -115,9 +115,9 @@
         <div class="footer-bottom">
             <p>&copy; 2026 UnBoxed Pages Book Community. All Rights Reserved.</p>
             <div class="footer-links">
-                <a href="story/story.html">Our Story</a> / 
-                <a href="faq/faq.html">FAQ</a> / 
-                <a href="subscribe/subscribe.html">Subscribe</a>
+                <a href="../story/story.html">Our Story</a> / 
+                <a href="../faq/faq.html">FAQ</a> / 
+                <a href="../signin/subscribe.html">Subscribe</a>
             </div>
             <div class="footer-socials">
                 <i class="fa-brands fa-facebook"></i>
@@ -126,6 +126,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const badge = document.getElementById('cart-badge');
+            if (badge) {
+                let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
+                let altCount = localStorage.getItem('cartCount');
+                
+                if (cart.length > 0) {
+                    badge.innerText = cart.length;
+                } else if (altCount !== null) {
+                    badge.innerText = altCount;
+                } else {
+                    badge.innerText = "0";
+                }
+            }
+        });
+
+        function addToCart(event) {
+            event.preventDefault(); 
+            
+            const badge = document.getElementById('cart-badge');
+            if (badge) {
+                let currentCount = parseInt(badge.innerText);
+                let newCount = currentCount + 1;
+                
+                badge.innerText = newCount;
+                localStorage.setItem('cartCount', newCount);
+                
+                alert("Box has been successfully added! Total items in cart: " + newCount);
+            }
+        }
+    </script>
 
 </body>
 </html>

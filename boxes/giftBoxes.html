@@ -20,10 +20,10 @@
             <a href="../signin/signin.html" class="login-btn">LOGIN</a>
         </nav>
         <div class="nav-actions">
-            <a href="../signin/subscribe.html" class="subscribe-nav-btn">SUBSCRIBE</a>
+            <a href="../subscribe/subscribe.html" class="subscribe-nav-btn">SUBSCRIBE</a>
             <a href="../cart/cart.html" class="cart-icon">
                 <i class="fa-solid fa-shopping-cart"></i>
-                <span class="cart-badge">1</span>
+                <span class="cart-badge" id="cart-badge">1</span>
             </a>
         </div>
     </header>
@@ -40,7 +40,7 @@
                 <h3>COZY READING BOX</h3>
                 <p>2 Curated Books + Ceramic Mug</p>
                 <div class="product-price">$24.99</div>
-                <a href="#" class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
+                <a href="#" class="add-to-cart-btn" onclick="addToCart(event)"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
             </div>
 
             <div class="book-card">
@@ -50,7 +50,7 @@
                 <h3>CLASSIC LITERATURE BOX</h3>
                 <p>3 Hardcover Classics + Special Bookmark</p>
                 <div class="product-price">$29.99</div>
-                <a href="#" class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
+                <a href="#" class="add-to-cart-btn" onclick="addToCart(event)"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
             </div>
 
             <div class="book-card">
@@ -60,7 +60,7 @@
                 <h3>ART & POETRY BOX</h3>
                 <p>1 Poetry Anthology + 1 Art History Book + Minimalist Sketchbook</p>
                 <div class="product-price">$27.99</div>
-                <a href="#" class="add-to-cart-btn"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
+                <a href="#" class="add-to-cart-btn" onclick="addToCart(event)"><i class="fa-solid fa-basket-shopping"></i> ADD TO CART</a>
             </div>
         </div>
     </main>
@@ -74,5 +74,42 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", updateCartBadge);
+
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-badge');
+            if (badge) {
+                let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
+                badge.innerText = cart.length;
+            }
+        }
+
+        function addToCart(event) {
+            event.preventDefault();
+            const card = event.target.closest('.book-card');
+            if (!card) return;
+
+            const boxTitle = card.querySelector('h3').innerText;
+            const boxPrice = card.querySelector('.product-price').innerText;
+            
+            const hasIcon = card.querySelector('.book-img-placeholder i');
+            const iconClass = hasIcon ? hasIcon.getAttribute('class') : 'fa-solid fa-box-open';
+
+            let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
+
+            const newProduct = {
+                title: boxTitle,
+                price: boxPrice,
+                icon: iconClass,
+                image: ''
+            };
+            
+            cart.push(newProduct);
+            localStorage.setItem('unboxed_cart', JSON.stringify(cart));
+            updateCartBadge();
+            alert(`${boxTitle} has been successfully added to your cart!`);
+        }
+    </script>
 </body>
 </html>

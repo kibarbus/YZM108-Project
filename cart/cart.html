@@ -23,10 +23,10 @@
             <a href="../signin/signin.html" class="login-btn">LOGIN</a>
         </nav>
         <div class="nav-actions">
-            <a href="../subscribe/subscribe.html" class="subscribe-nav-btn">SUBSCRIBE</a>
+            <a href="../signin/subscribe.html" class="subscribe-nav-btn">SUBSCRIBE</a>
             <a href="../cart/cart.html" class="cart-icon">
                 <i class="fa-solid fa-shopping-cart"></i>
-                <span class="cart-badge">1</span>
+                <span class="cart-badge" id="cart-badge">1</span>
             </a>
         </div>
     </header>
@@ -35,9 +35,14 @@
     <main class="cart-container">
         <h1 class="cart-main-title">YOUR SHOPPING CART</h1>
         
-        <div class="cart-wrapper">
+        <div id="empty-cart-msg" style="display: none; text-align: center; padding: 50px 0;">
+            <i class="fa-solid fa-basket-shopping" style="font-size: 50px; color: #ccc; margin-bottom: 20px;"></i>
+            <p style="color: #666; font-size: 16px;">Your shopping cart is currently empty.</p>
+        </div>
+
+        <div class="cart-wrapper" id="cart-main-wrapper">
             <!-- SEPETTEKİ ÜRÜNLER -->
-            <div class="cart-items">
+            <div class="cart-items" id="cart-items-list">
                 <div class="cart-item-card">
                     <div class="cart-item-img">
                         <i class="fa-solid fa-box-open" style="font-size: 30px; color: #a3b19b;"></i>
@@ -63,7 +68,7 @@
                 <h2>ORDER SUMMARY</h2>
                 <div class="summary-row">
                     <span>Subtotal</span>
-                    <span>499.00 TL</span>
+                    <span id="summary-subtotal">$0.00</span>
                 </div>
                 <div class="summary-row">
                     <span>Shipping</span>
@@ -72,10 +77,10 @@
                 <hr class="summary-divider">
                 <div class="summary-row total-row">
                     <span>Total</span>
-                    <span>499.00 TL</span>
+                    <span id="summary-total">$0.00</span>
                 </div>
                 
-                <a href="#" class="checkout-btn">PROCEED TO CHECKOUT</a>
+                <a href="#" class="checkout-btn" onclick="checkoutCart(event)">PROCEED TO CHECKOUT</a>
                 <a href="../boxes/boxes.html" class="continue-shopping"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
             </div>
         </div>
@@ -91,5 +96,84 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", loadCartPage);
+
+        function loadCartPage() {
+            const listContainer = document.getElementById('cart-items-list');
+            const mainWrapper = document.getElementById('cart-main-wrapper');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+            const badge = document.getElementById('cart-badge');
+            
+            const subtotalEl = document.getElementById('summary-subtotal');
+            const totalEl = document.getElementById('summary-total');
+
+            let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
+            
+            if (badge) badge.innerText = cart.length;
+
+            if (cart.length === 0) {
+                mainWrapper.style.display = 'none';
+                emptyMsg.style.display = 'block';
+                return;
+            }
+
+            mainWrapper.style.display = 'flex';
+            emptyMsg.style.display = 'none';
+            listContainer.innerHTML = '';
+
+            let totalSum = 0;
+
+            cart.forEach((item, index) => {
+                let currentPrice = parseFloat(item.price.replace('$', '')) || 0;
+                totalSum += currentPrice;
+
+                let imageHtml = '';
+                if (item.isIcon) {
+                    imageHtml = `<i class="fa-solid ${item.image}" style="font-size: 30px; color: #a3b19b;"></i>`;
+                } else {
+                    imageHtml = `<img src="${item.image}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;">`;
+                }
+
+                listContainer.innerHTML += `
+                    <div class="cart-item-card">
+                        <div class="cart-item-img">
+                            ${imageHtml}
+                        </div>
+                        <div class="cart-item-details">
+                            <h3>${item.title}</h3>
+                            <p>Monthly Book Subscription</p>
+                            <span class="cart-item-remove" onclick="removeCartItem(${index})"><i class="fa-regular fa-trash-can"></i> Remove</span>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="qty-btn" onclick="event.preventDefault()">-</button>
+                            <span>1</span>
+                            <button class="qty-btn" onclick="event.preventDefault()">+</button>
+                        </div>
+                        <div class="cart-item-price">
+                            ${item.price}
+                        </div>
+                    </div>
+                `;
+            });
+
+            subtotalEl.innerText = "$" + totalSum.toFixed(2);
+            totalEl.innerText = "$" + totalSum.toFixed(2);
+        }
+
+        function removeCartItem(index) {
+            let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('unboxed_cart', JSON.stringify(cart));
+            loadCartPage();
+        }
+
+        function checkoutCart(event) {
+            event.preventDefault();
+            alert("Thank you for your purchase! Connecting to Kocaeli University simulated payment gateway.");
+            localStorage.removeItem('unboxed_cart');
+            loadCartPage();
+        }
+    </script>
 </body>
 </html>
