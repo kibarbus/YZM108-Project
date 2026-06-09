@@ -1,4 +1,4 @@
-/* Genel Sıfırlama ve Font Ayarları */
+/* GENEL SIFIRLAMA VE FONT AYARLARI */
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +11,12 @@ body {
     color: #333;
 }
 
-/* ==========================================
-   2. NAVBAR & LOGO STYLES (Genişletilmiş Premium Navbar)
-   ========================================== */
+/* NAVBAR VE LOGO STYLES */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 8%; /* Navbar dikey genişliği artırıldı, sağdan soldan daha geniş alan bırakıldı */
+    padding: 35px 8%;
     background-color: #fff;
     border-bottom: 1px solid #eaeaea;
     position: sticky;
@@ -30,30 +28,30 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 26px; /* Logo yazısı bir tık büyütüldü */
-    font-weight: 700;
+    font-size: 26px; /* Yazı boyutu belirgin şekilde büyütüldü */
+    font-weight: 700; /* Kalın ve tok görünüm */
     color: #111111;
     cursor: pointer;
     user-select: none;
-    text-transform: none; /* Büyük-küçük harf dayatmasını tamamen kaldırır */
+    text-transform: none; /* Tarayıcının küçük harfe zorlamasını tamamen engeller */
 }
 
 .logo i {
-    color: #606c38b6; /* Şık soft zeytin yeşili kutu */
-    font-size: 30px; /* İkon logoyla dengelendi */
+    color: #606c38b6; /* Şık soft zeytin yeşili kutu rengi */
+    font-size: 30px; /* Arşiv kutusu ikonu yazı ile tam dengelendi */
     display: inline-block;
 }
 
 .logo span {
     color: #111111;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fontun bozulmasını engeller */
     font-weight: 700;
     letter-spacing: -0.3px;
 }
 
-/* Menü Başlıkları (Tamamen sağa yaslandı ve fontları büyütüldü) */
 .nav-links {
-    margin-left: auto; /* Başlıkları tamamen sağa fırlatır */
-    margin-right: 40px; /* Sağdaki butonlarla arasında geniş bir nefes alma alanı bırakır */
+    margin-left: auto;
+    margin-right: 40px;
     display: flex;
     align-items: center;
 }
@@ -61,27 +59,27 @@ body {
 .nav-links a {
     text-decoration: none;
     color: #444;
-    margin: 0 22px; /* Başlıkların kendi aralarındaki boşluk artırıldı */
-    font-size: 17px; /* Başlıkların boyutu büyütüldü */
-    font-weight: 700; /* Daha tok ve belirgin durmaları için bold yapıldı */
+    margin: 0 22px;
+    font-size: 17px;
+    font-weight: 700;
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #606c38b6 !important; /* Mouse gelince o soft yeşile döner */
+    color: #606c38b6 !important;
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 25px; /* Buton ve sepet arasındaki mesafe açıldı */
+    gap: 25px;
 }
 
 .subscribe-nav-btn {
     background-color: #606c38b6;
     color: #fff !important;
-    padding: 14px 28px; /* Buton biraz daha büyütülüp navbar genişliğine uyduruldu */
+    padding: 14px 28px;
     text-decoration: none;
     font-weight: bold;
     font-size: 15px;
@@ -97,7 +95,7 @@ body {
 .cart-icon {
     position: relative;
     color: #333;
-    font-size: 22px; /* Sepet ikonu bir tık büyütüldü */
+    font-size: 22px;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -118,65 +116,124 @@ body {
 }
 
 /* HERO SECTION */
-.hero {
-    background-image: url('https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&q=80&w=1500'); /* Geçici arka plan resmi */
-    background-size: cover;
-    background-position: center;
-    height: 70vh;
-}
-
-.hero-overlay {
-    background: linear-gradient(to bottom, rgba(95, 175, 30, 0.507), rgba(35, 95, 7, 0.76));
-    height: 100%;
+.hero-minimalist {
+    background-color: #f0f2eb;
+    min-height: 55vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
-    padding: 0 20px;
+    padding: 40px 20px;
+    border-bottom: 1px solid #eaeaea;
+    width: 100%;
 }
 
-.hero-logo-box {
-    border: 2px solid #fff;
-    display: inline-flex;
+.hero-minimal-content {
+    max-width: 800px;
+    display: flex;
     flex-direction: column;
-    padding: 10px 20px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    text-transform: lowercase;
+    align-items: center;
 }
 
-.hero-logo-box i {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.hero-content h1 {
-    font-size: 38px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.hero-content p {
-    font-size: 16px;
-    max-width: 600px;
+.hero-center-logo {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #283618;
     margin: 0 auto 30px auto;
-    opacity: 0.9;
+    padding: 15px 35px;
+    cursor: default;
+    user-select: none;
+    position: relative;
 }
 
-.hero-btn {
+.hero-center-logo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(96, 108, 56, 0.7) 50%, transparent);
+}
+
+.hero-center-logo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20%;
+    bottom: 20%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(96, 108, 56, 0.7) 50%, transparent);
+}
+
+.hero-center-logo h2::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(96, 108, 56, 0.7) 50%, transparent);
+}
+
+.hero-center-logo h2::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    bottom: 20%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(96, 108, 56, 0.7) 50%, transparent);
+}
+
+.hero-center-logo i {
+    font-size: 38px;
+    color: #283618;
+}
+
+.hero-center-logo h2 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0;
+    text-transform: none;
+    color: #283618;
+}
+
+.hero-minimal-content h1 {
+    font-size: 34px;
+    color: #283618;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.hero-minimal-content p {
+    font-size: 16px;
+    color: #555;
+    max-width: 550px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.hero-btn-dark {
     display: inline-block;
-    background-color: #111;
+    background-color: #283618;
     color: #fff;
     text-decoration: none;
-    padding: 12px 35px;
+    padding: 14px 35px;
     font-weight: bold;
+    font-size: 13px;
     border-radius: 2px;
+    letter-spacing: 0.5px;
     transition: background 0.3s;
 }
 
-.hero-btn:hover {
-    background-color: #333;
+.hero-btn-dark:hover {
+    background-color: #192211;
 }
 
 /* FEATURES SECTION */
@@ -186,7 +243,6 @@ body {
     background-color: #fff;
 }
 
-/* Başlığı mavi tonundan, logomuzla uyumlu şık antrasit tonuna çektik */
 .section-title {
     font-size: 28px;
     color: #2b2d42;
@@ -231,7 +287,7 @@ body {
     line-height: 1.6;
 }
 
-/* CALL TO ACTION BLUE SECTION -> NOW DEEP GREEN (Koyu Yeşil Alan) */
+/* CALL TO ACTION SECTION */
 .cta-blue {
     background-color: #283618; 
     color: #fff;
@@ -251,7 +307,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Koyu yeşil üzerindeki butonun yazısını da uyumlu yaptık */
 .cta-white-btn {
     display: inline-block;
     background-color: #fff;
@@ -268,8 +323,7 @@ body {
     opacity: 0.9;
 }
 
-/* FOOTER SECTION (En alttaki koyu alan) */
-/* İletişim ve telif haklarının olduğu bu en alt paneli de cta ile uyumlu çok koyu antrasit-yeşil tonuna çektik */
+/* FOOTER SECTION */
 .main-footer {
     background-color: #192211; 
     color: #a3b19b;
@@ -323,5 +377,3 @@ body {
         text-align: center;
     }
 }
-
-

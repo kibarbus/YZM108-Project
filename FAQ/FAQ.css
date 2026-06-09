@@ -67,7 +67,6 @@
     background-color: #fcfcfc;
 }
 
-/* Aktifken Ok İkonunu Ters Çevirme */
 .faq-item.active .faq-question i {
     transform: rotate(180deg);
     color: #606c38b6;
