@@ -62,17 +62,8 @@
         document.addEventListener("DOMContentLoaded", () => {
             const badge = document.getElementById('cart-badge');
             if (badge) {
-                // Hem 'unboxed_cart' dizisini hem de eski 'cartCount' değerini kontrol ediyoruz
                 let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
-                let altCount = localStorage.getItem('cartCount');
-                
-                if (cart.length > 0) {
-                    badge.innerText = cart.length;
-                } else if (altCount !== null) {
-                    badge.innerText = altCount;
-                } else {
-                    badge.innerText = "0"; // Eğer sepet tamamen boşsa 0 gösterir
-                }
+                badge.innerText = cart.length;
             }
         });
     </script>

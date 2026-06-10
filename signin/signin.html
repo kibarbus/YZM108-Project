@@ -74,15 +74,7 @@
             const badge = document.getElementById('cart-badge');
             if (badge) {
                 let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
-                let altCount = localStorage.getItem('cartCount');
-                
-                if (cart.length > 0) {
-                    badge.innerText = cart.length;
-                } else if (altCount !== null) {
-                    badge.innerText = altCount;
-                } else {
-                    badge.innerText = "0";
-                }
+                badge.innerText = cart.length;
             }
         });
     </script>
