@@ -15,20 +15,20 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    max-width: 1000px; /* Yeni elemanlar rahat sığsın diye genişletildi */
+    max-width: 1000px; 
     margin: 0 auto 40px auto;
 }
 
 .book-card {
     background-color: #fff;
     padding: 25px 20px;
-    border: 1px solid #eaeaea; /* Kart sınırları netleşsin diye */
+    border: 1px solid #eaeaea; 
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Buton ve fiyatları en alta eşit hizalar */
-    min-height: 520px; /* Kart boyutlarını e-ticaret düzeninde sabitledik */
+    justify-content: space-between; 
+    min-height: 520px; 
     border-bottom: 3px solid transparent;
     transition: all 0.3s;
 }
@@ -40,26 +40,25 @@
 
 .book-img-placeholder {
     width: 100%;
-    height: 240px; /* Resimlerin taşmasını önlemek ve butonlara yer açmak için optimize edildi */
+    height: 240px; 
     background-color: #eaeaea;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
     border-radius: 2px;
-    overflow: hidden; /* Resim köşelerden taşarsa gizler */
+    overflow: hidden; 
 }
 
-/* YENİ: Gerçek Kutu Resimlerinin Kusursuz Görünmesi İçin */
 .product-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Resmi ezmeden kutunun içine kusursuzca sığdırır */
+    object-fit: cover; 
     transition: transform 0.3s ease;
 }
 
 .book-card:hover .product-img {
-    transform: scale(1.04); /* Üzerine gelince çok hafif derinlik katacak büyüme efekti */
+    transform: scale(1.04); 
 }
 
 .book-card h3 {
@@ -76,7 +75,7 @@
     margin-bottom: 15px;
 }
 
-/* YENİ: Fiyat Alanı Stili */
+/* Fiyat Alanı Stili */
 .product-price {
     font-size: 22px;
     font-weight: 700;
@@ -84,7 +83,7 @@
     margin-bottom: 15px;
 }
 
-/* YENİ: Sepete Ekle Buton Stili */
+/* Sepete Ekle Buton Stili */
 .add-to-cart-btn {
     display: inline-flex;
     align-items: center;

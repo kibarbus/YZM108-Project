@@ -95,7 +95,6 @@
             const boxTitle = card.querySelector('h3').innerText;
             const boxPrice = card.querySelector('.product-price').innerText;
             
-            // YENİ: İkon yerine eklediğimiz resmin kaynağını (src) dinamik alıyoruz
             const imgElement = card.querySelector('.product-img');
             const imgSrc = imgElement ? imgElement.getAttribute('src') : '';
 
@@ -104,8 +103,8 @@
             const newProduct = {
                 title: boxTitle,
                 price: boxPrice,
-                icon: '', // Artık ikon yerine resim kullanıyoruz
-                image: imgSrc // Resim yolunu sepete aktarıyoruz
+                icon: '', 
+                image: imgSrc 
             };
             
             cart.push(newProduct);

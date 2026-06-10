@@ -47,19 +47,17 @@
     align-items: center;
     margin-bottom: 15px;
     border-radius: 2px;
-    overflow: hidden; /* Resimlerin köşelerden taşmasını önler */
+    overflow: hidden; 
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* YENİ: Eklenen kutu fotoğraflarının kart içine jilet gibi oturması için */
 .product-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Resmi uzatmadan veya basıklaştırmadan alana sığdırır */
+    object-fit: cover; 
     transition: transform 0.3s ease;
 }
 
-/* Kartın üzerine gelindiğinde fotoğrafa hafif ve şık bir yaklaşma efekti verir */
 .book-card:hover .product-img {
     transform: scale(1.04);
 }
