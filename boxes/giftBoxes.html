@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gift Boxes - Unboxed Pages</title>
-    <link rel="stylesheet" href="../index/index.css"> <link rel="stylesheet" href="giftBoxes.css">      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../index/index.css"> 
+    <link rel="stylesheet" href="giftBoxes.css">      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -35,7 +37,7 @@
         <div class="books-grid">
             <div class="book-card">
                 <div class="book-img-placeholder">
-                    <i class="fa-solid fa-coffee" style="font-size: 40px;"></i>
+                    <img src="../images/cozy-box.jpg" alt="Cozy Reading Box" class="product-img">
                 </div>
                 <h3>COZY READING BOX</h3>
                 <p>2 Curated Books + Ceramic Mug</p>
@@ -45,7 +47,7 @@
 
             <div class="book-card">
                 <div class="book-img-placeholder">
-                    <i class="fa-solid fa-feather-pointed" style="font-size: 40px;"></i>
+                    <img src="../images/classic-box.jpg" alt="Classic Literature Box" class="product-img">
                 </div>
                 <h3>CLASSIC LITERATURE BOX</h3>
                 <p>3 Hardcover Classics + Special Bookmark</p>
@@ -55,7 +57,7 @@
 
             <div class="book-card">
                 <div class="book-img-placeholder">
-                    <i class="fa-solid fa-palette" style="font-size: 40px;"></i>
+                    <img src="../images/poetry-box.jpg" alt="Art & Poetry Box" class="product-img">
                 </div>
                 <h3>ART & POETRY BOX</h3>
                 <p>1 Poetry Anthology + 1 Art History Book + Minimalist Sketchbook</p>
@@ -93,16 +95,17 @@
             const boxTitle = card.querySelector('h3').innerText;
             const boxPrice = card.querySelector('.product-price').innerText;
             
-            const hasIcon = card.querySelector('.book-img-placeholder i');
-            const iconClass = hasIcon ? hasIcon.getAttribute('class') : 'fa-solid fa-box-open';
+            // YENİ: İkon yerine eklediğimiz resmin kaynağını (src) dinamik alıyoruz
+            const imgElement = card.querySelector('.product-img');
+            const imgSrc = imgElement ? imgElement.getAttribute('src') : '';
 
             let cart = JSON.parse(localStorage.getItem('unboxed_cart')) || [];
 
             const newProduct = {
                 title: boxTitle,
                 price: boxPrice,
-                icon: iconClass,
-                image: ''
+                icon: '', // Artık ikon yerine resim kullanıyoruz
+                image: imgSrc // Resim yolunu sepete aktarıyoruz
             };
             
             cart.push(newProduct);
